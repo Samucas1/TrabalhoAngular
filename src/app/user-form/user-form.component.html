@@ -1,0 +1,99 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome Completo</mat-label>
+      <input matInput formControlName="nome" required>
+      <mat-error *ngIf="userForm.controls.nome.hasError('required')">
+        Nome completo é obrigatório
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Data de Nascimento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dataNascimento" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="userForm.controls.dataNascimento.hasError('required')">
+        Data de nascimento é obrigatória
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="cpf" required>
+      <mat-error *ngIf="userForm.controls.cpf.hasError('required')">
+        CPF é obrigatório
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="email" required>
+      <mat-error *ngIf="userForm.controls.email.hasError('required')">
+        E-mail é obrigatório
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Telefone</mat-label>
+      <input matInput formControlName="telefone" required>
+      <mat-error *ngIf="userForm.controls.telefone.hasError('required')">
+        Telefone é obrigatório
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>CEP</mat-label>
+      <input matInput formControlName="cep" required (blur)="buscarEndereco()">
+      <mat-error *ngIf="userForm.controls.cep.hasError('required')">
+        CEP é obrigatório
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Endereço</mat-label>
+      <input matInput formControlName="endereco" required>
+      <mat-error *ngIf="userForm.controls.endereco.hasError('required')">
+        Endereço é obrigatório
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Número</mat-label>
+      <input matInput formControlName="numero" required>
+      <mat-error *ngIf="userForm.controls.numero.hasError('required')">
+        Número é obrigatório
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Complemento</mat-label>
+      <input matInput formControlName="complemento">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Bairro</mat-label>
+      <input matInput formControlName="bairro" required>
+      <mat-error *ngIf="userForm.controls.bairro.hasError('required')">
+        Bairro é obrigatório
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Cidade</mat-label>
+      <input matInput formControlName="cidade" required>
+      <mat-error *ngIf="userForm.controls.cidade.hasError('required')">
+        Cidade é obrigatória
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Estado</mat-label>
+      <input matInput formControlName="estado" required>
+      <mat-error *ngIf="userForm.controls.estado.hasError('required')">
+        Estado é obrigatório
+      </mat-error>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit">Enviar</button>
+  </form>
+  
